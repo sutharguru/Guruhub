@@ -1,33 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guruprasad's Site</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Chatbot by Guru</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guru's Task Assistant Chatbot for environment URLs and Flex-Server queries.">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>Welcome to My Website</h1>
-    <p>This is a demo hosted on GitHub Pages.</p>
-  </header>
 
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>Hello! I’m Guruprasad, a QA Engineer exploring GitHub Pages hosting.</p>
+<header class="chatbot-header">
+    <h1>👋 Welcome to Guru’s Chat-Bot Assistant</h1>
+    <p>I help with task-related queries and Flex-Server assistance.</p>
+    <p><br>View all supported Chat-Bot queries till now that you can ask to ChatBot: <a href="https://raw.githubusercontent.com/sutharguru/chatbot-patterns/refs/heads/main/chatbot_patterns.txt" target="_blank">Click here</a></p>
+
+    <details>
+        <summary>📢 Latest Update</summary>
+        <p>✅ Environment URLs related queries are now supported.<br>
+        🔜 More query support coming soon!</p>
+    </details>
+
+</header>
+
+<aside class="faq-sidebar" aria-label="Sidebar - FAQ">
+    <h2><br>💡 About the Chatbot</h2>
+    <ul>
+        <li><strong>What can this Chat-Bot do?</strong><br>This is a non-AI assistant built to guide frequently asked queries and Flex-Server related issues.</li>
+        <li><strong><br>Need Help?</strong><br>
+            <a href="https://teams.microsoft.com/l/chat/0/0?users=SESA736708@se.com" target="_blank">
+                <i class="fas fa-comments"></i> Chat with Guru on Teams
+            </a><br>
+            <li>Or<br>
+            <a href="tel:+91-9653773010">
+                <i class="fas fa-phone"></i> Call Guru on this number
+            </a>
+        </li>
+    </ul>
+</aside>
+
+<main class="container">
+    <section class="chatbox">
+        <div class="chatbox__support" role="region" aria-label="Chat Area">
+            <header class="chatbox__header">
+                <div class="chatbox__image--header">
+                    <img src="https://img.icons8.com/color/48/000000/circled-user-male-skin-type-4.png" alt="Chatbot avatar">
+                </div>
+                <div class="chatbox__content--header">
+                    <h4 class="chatbox__heading--header">Chat Support</h4>
+                    <p class="chatbox__description--header">Hi, I'm Guru's Chat-Bot Assistant. How can I help you today?</p>
+                </div>
+            </header>
+
+            <div class="chatbox__messages" aria-live="polite">
+                <div class="chatbox__message-bubble bot">💡 Tip: Try or refer all supported queries till now on this Chat-Bot <a href="https://raw.githubusercontent.com/sutharguru/chatbot-patterns/refs/heads/main/chatbot_patterns.txt" target="_blank">View here</a></div>
+            </div>
+
+            <footer class="chatbox__footer">
+                <label for="chatInput" class="sr-only">Type your message</label>
+                <input id="chatInput" type="text" placeholder="Write a message..." aria-label="Chat input field">
+                <button class="chatbox__send--footer send__button" aria-label="Send message">Send</button>
+            </footer>
+        </div>
+
+        <div class="chatbox__button">
+            <button aria-label="Toggle chat">
+                <img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" alt="Open Chat" onerror="this.src='fallback.png';">
+            </button>
+        </div>
     </section>
+</main>
 
-    <section>
-      <h2>Contact</h2>
-      <p>You can reach me at 
-        <a href="mailto:sutharguru27@gmail.com">sutharguru27@gmail.com</a>
-      </p>
-    </section>
-  </main>
+<footer class="chatbot-footer">
+    <p><br>🛠️ Developed and maintained by Guru Suthar © 2025</p>
+</footer>
 
-  <footer>
-    <p>&copy; 2026 Guruprasad. All rights reserved.</p>
-  </footer>
+<script>
+    $SCRIPT_ROOT = {{ request.script_root | tojson }};
+</script>
+<script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+
+<!-- Optional Responsive CSS -->
+<style>
+@media screen and (max-width: 600px) {
+    .faq-sidebar { display: none; }
+    .chatbox { width: 100%; padding: 10px; }
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+</style>
+        <!-- Botpress Chatbot Scripts -->
+
+        <script src="https://cdn.botpress.cloud/webchat/v2.4/inject.js"></script>
+        <script src="https://files.bpcontent.cloud/2025/04/30/14/20250430144926-W3DAA760.js"></script>
+    
 </body>
 </html>

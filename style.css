@@ -1,29 +1,72 @@
+/* Global Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #f4f4f9;
-  color: #333;
+  background: #f9fafc;
+  color: #222;
+  line-height: 1.6;
 }
 
+/* Header */
 header {
-  background: #007acc;
-  color: white;
-  padding: 20px;
+  background: linear-gradient(135deg, #007acc, #005fa3);
+  color: #fff;
+  padding: 25px;
   text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+/* Main Content */
 main {
+  max-width: 1000px;
+  margin: 20px auto;
   padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+/* Headings */
 h2 {
   color: #007acc;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 8px;
+  margin-top: 0;
 }
 
+/* Footer */
 footer {
-  background: #333;
-  color: white;
+  background: #222;
+  color: #ddd;
   text-align: center;
-  padding: 10px;
+  padding: 15px;
+  font-size: 0.9rem;
+}
+
+/* Links */
+a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  main {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
 }
